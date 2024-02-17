@@ -20,6 +20,14 @@ contract Counter {
   function getCounter() public view returns (uint32) {
     return uint32(counter);
   }
+
+  fallback() external payable {
+    console.log("----- fallback:", msg.value);
+  }
+
+  receive() external payable {
+    console.log("----- receive:", msg.value);
+  }
 }
 
 // public anyone can call

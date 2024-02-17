@@ -37,8 +37,8 @@
       ]
     },
     "/home/ditproz/personal/jpegdegens/contracts/Counter.sol": {
-      "lastModificationDate": 1708171109775,
-      "contentHash": "5090ba6c0c94a8c2305016fb3f4f655e",
+      "lastModificationDate": 1708199548395,
+      "contentHash": "4784aaec3faed56ef79a2ca257dc0a30",
       "sourceName": "contracts/Counter.sol",
       "solcConfig": {
         "version": "0.8.4",

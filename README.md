@@ -66,3 +66,6 @@ There seems to be some sort of cache with the highest block number known, and it
 1. Shutdown browser with metamask 
 1. Settings > Advanced > Clear Activity
 1. Shutdown localhost hardhat testnet
+
+### Catchout for python server caching
+

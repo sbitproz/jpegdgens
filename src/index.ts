@@ -59,7 +59,9 @@ async function runCount() {
     [
       "function count() public",
       "function getCounter() public view returns (uint32)",
-    ], // how to communicate to the contract
+      // "receive() external payable",
+      // "fallback() external payable",
+    ], // ABI how to communicate to the contract
     signer // the network
   );
   await count.count();
