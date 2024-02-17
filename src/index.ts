@@ -1,3 +1,4 @@
+import { countReset } from "console";
 import { ethers } from "ethers";
 
 function getEth() {
@@ -40,4 +41,45 @@ async function run() {
   document.body.innerHTML = await hello.hello();
 }
 
-run();
+async function runCount() {
+  if (!(await hasAccounts()) && !(await requestAccounts())) {
+    throw new Error("Please let me take your money");
+  }
+
+  const providers = new ethers.providers.Web3Provider(getEth());
+  const signer = providers.getSigner();
+
+  console.log(
+    "process.env.COUNT_CONTRACT_ADDRESS",
+    process.env.COUNT_CONTRACT_ADDRESS
+  );
+
+  const count = new ethers.Contract(
+    process.env.COUNT_CONTRACT_ADDRESS,
+    [
+      "function count() public",
+      "function getCounter() public view returns (uint32)",
+    ], // how to communicate to the contract
+    signer // the network
+  );
+  await count.count();
+
+  const el = document.createElement("div");
+  async function setCounter() {
+    el.innerHTML = await count.getCounter();
+  }
+  setCounter();
+  const button = document.createElement("button");
+  button.innerHTML = "Incrament";
+  button.onclick = async () => {
+    await count.count();
+    setCounter();
+  };
+
+  document.body.appendChild(el);
+  document.body.appendChild(button);
+}
+
+// run();
+
+runCount();
