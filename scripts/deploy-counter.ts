@@ -5,7 +5,7 @@ import { ethers } from "hardhat";
 async function foo() {
   const Counter = await ethers.getContractFactory("Counter"); // read the contract 
   const counter = await Counter.deploy(); // deploy the contract
-  await counter.deployed(); // wait for it to deploy
+  return await counter.deployed(); // wait for it to deploy
 }
 
 async function deploy() {
