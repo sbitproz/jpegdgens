@@ -2,7 +2,7 @@
   "name": "jpegdegens",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Dan Clovis <dan.clovis@tokenovate.com>",
+  "author": "Dan Clovis <dan@infinatech.com>",
   "license": "MIT",
   "devDependencies": {
     "@nomiclabs/hardhat-waffle": "^2.0.6",

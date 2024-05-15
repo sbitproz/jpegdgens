@@ -1,5 +1,5 @@
 import "@nomiclabs/hardhat-waffle"
-import "@nomiclabs/hardhat-ethers"
+import "@nomiclabs/hardhat-ethers" // helps with typescript typing through project
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {

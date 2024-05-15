@@ -29,6 +29,25 @@ yarn add  -D hardhat
 npx hardhat
 ```
 
+# folder structure 
+- contracts
+scripts
+test
+
+assumptions are made for this folder structure by hardhat, this is a kind of standard
+
+# Licensing
+
+first line of a contract should have a licensing
+
+# hardhat config
+
+make sure pragma version in file matches hardhat config version
+
+# compile
+
+npx hardhat compile
+
 # build webproject
 
 ```
@@ -69,3 +88,6 @@ There seems to be some sort of cache with the highest block number known, and it
 
 ### Catchout for python server caching
 
+
+
+https://theprimeagen.github.io/web3-smart-contracts

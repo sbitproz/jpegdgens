@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: Unlicense
+// SPDX-License-Identifier: Unlicense - specify which version / range of version you want to use
 pragma solidity ^0.8.0;
 
 contract HelloWorld {
