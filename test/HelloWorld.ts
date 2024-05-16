@@ -9,7 +9,7 @@ import { expect } from "chai";
 
 describe("hello world", () => {
   it("should say hi", async () => {
-    const HelloWorld = await ethers.getContractFactory("HelloWorld");
+    const HelloWorld = await ethers.getContractFactory("HelloWorld"); // name of the contract HelloWorld (getContractFactory)
     const hello = await HelloWorld.deploy();
 
     await hello.deployed();

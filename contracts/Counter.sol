@@ -15,19 +15,19 @@ contract Counter {
   }
 
   // free to read
-  // view; functiosn that do no change the contracts state
+  // view; function that do no change the contracts state
   // pure; cannot read or write state on the contract
   function getCounter() public view returns (uint32) {
     return uint32(counter);
   }
 
-  fallback() external payable {
-    console.log("----- fallback:", msg.value);
-  }
+  // fallback() external payable {
+  //   console.log("----- fallback:", msg.value);
+  // }
 
-  receive() external payable {
-    console.log("----- receive:", msg.value);
-  }
+  // receive() external payable {
+  //   console.log("----- receive:", msg.value);
+  // }
 }
 
 // public anyone can call

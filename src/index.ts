@@ -6,14 +6,14 @@ function getEth() {
   const eth = window.ethereum;
 
   if (!eth) {
-    throw new Error("get netanasj abd a oisutuve ");
+    throw new Error("get unable to load ethers");
   }
   return eth;
 }
 
 async function hasAccounts() {
   const eth = getEth();
-  const accounts = (await eth.request({ method: "eth_accounts" })) as string[];
+  const accounts = (await eth.request({ method: "eth_accounts" })) as string[]; // request accounts from metamask
 
   return accounts && accounts.length;
 }
@@ -35,11 +35,13 @@ async function run() {
   const hello = new ethers.Contract(
     "0x5fbdb2315678afecb367f032d93f642f64180aa3", // where on this network
     ["function hello() public pure returns (string memory)"], // how to communicate to the contract
-    new ethers.providers.Web3Provider(getEth()) // the network
+    new ethers.providers.Web3Provider(getEth()) // the network through metamask
   );
 
   document.body.innerHTML = await hello.hello();
 }
+
+// run();
 
 async function runCount() {
   if (!(await hasAccounts()) && !(await requestAccounts())) {
@@ -81,7 +83,5 @@ async function runCount() {
   document.body.appendChild(el);
   document.body.appendChild(button);
 }
-
-// run();
 
 runCount();

@@ -14,8 +14,8 @@ async function deploy() {
   return hello;
 }
 
-async function sayHello(hello) {
-  console.log(hello);
+async function sayHello(hello: any) {
+  console.log("Say hello:", await hello.hello());
 }
 
 deploy().then(sayHello);
